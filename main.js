@@ -30,10 +30,41 @@
 // liSecond.style.backgroundColor = "green";
 // liThird.style.display = "none";
 
-const li = document.querySelectorAll('li');
-li[1].style.color = "green";
-const odd = document.querySelectorAll('li:nth-child(odd)');
-// console.log(odd);
-odd.forEach((item)=>{
-    item.style.backgroundColor = "green";
-});
+// const li = document.querySelectorAll('li');
+// li[1].style.color = "green";
+// const odd = document.querySelectorAll('li:nth-child(odd)');
+// // console.log(odd);
+// odd.forEach((item)=>{
+//     item.style.backgroundColor = "green";
+// });
+
+//parentNode and parentElement do same things//
+// const itemList = document.querySelector('#items');
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = "#f4f4f4";
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+// const itemList = document.querySelector('#items');
+// console.log(itemList.firstElementChild);
+// console.log(itemList.children[1]);
+// console.log(itemList.lastElementChild);
+// console.log(itemList.nextElementSibling);
+// console.log(itemList.previousElementSibling);
+
+const newDiv = document.createElement('div');
+newDiv.className="newDiv";
+newDiv.id = "newDiv1";
+const newDivText = document.createTextNode('Hello');
+newDiv.appendChild(newDivText);
+const h1 = document.querySelector('header h1');
+const container = document.querySelector('header .container');
+newDiv.style.fontSize = "30px";
+container.insertBefore(newDiv,h1);
+
+const newLi=document.createElement('li');
+newLi.className='list-group-item';
+const newLiText=document.createTextNode('Hello');
+newLi.appendChild(newLiText);
+const items = document.querySelector('#items');
+const itemList = document.querySelector('.list-group-item');
+items.insertBefore(newLi,itemList);
